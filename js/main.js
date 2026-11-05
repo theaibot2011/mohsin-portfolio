@@ -29,15 +29,15 @@ const CONTACT = {
 
 // About me paragraphs (first person). Use <strong> to highlight words.
 const ABOUT = [
-  "Hey, I'm <strong>Mohsin</strong>. I'm a student at <strong>Bravian International School</strong> in Karachi, Pakistan, currently preparing for my O Levels.",
-  "Nobody handed me a course. I taught myself <strong>Python, HTML and PowerShell</strong> and learned video editing in <strong>DaVinci Resolve</strong> by building things and breaking them until they worked. When I run into a problem, my first thought is usually: <em>\"I could just build that.\"</em>",
-  "<strong>I don't build random stuff. I find real problems around me and build tools to fix them.</strong> A damaged monitor led to <strong>MonitorTest</strong>, people knowing my laptop PIN led to <strong>Login Snaps</strong>, and contest prep led to <strong>Graphite</strong>, my own scientific calculator.",
+  "Hey, I'm Mohsin. I'm a student at Bravian International School and College in Bahria Town, Karachi, currently preparing for my O Levels.",
+  "Nobody handed me a course. I taught myself Python, HTML and PowerShell and learned video editing in DaVinci Resolve by building things and breaking them until they worked. When I run into a problem, my first thought is usually: <em>\"I could just build that.\"</em>",
+  "I don't build random stuff. I find real problems around me and build tools to fix them. A damaged monitor led to MonitorTest, people using my laptop without asking led to Login Snaps, and contest prep led to Graphite, my own scientific calculator.",
   "I've also built a party game my friends wanted, I'm working on making the Japanese-only head unit in my Nissan Dayz actually usable, and I even tried running a data recovery startup. It failed, and I learned more from that than from anything that worked. Outside of code I'm into gaming, cars, and making content.",
 ];
 
 const FACTS = [
-  { icon: "🎓", label: "Bravian International School", sub: "O Levels candidate" },
-  { icon: "📍", label: "Karachi, Pakistan", sub: "Based in" },
+  { icon: "🎓", label: "Bravian International School and College", sub: "O Levels candidate" },
+  { icon: "📍", label: "Bahria Town, Karachi", sub: "Based in" },
   { icon: "🧠", label: "100% self-taught", sub: "Docs, YouTube & trial-and-error" },
   { icon: "🚀", label: "Open to opportunities", sub: "Exchanges · internships · competitions" },
 ];
@@ -53,7 +53,7 @@ const HOW_I_BUILD = {
   ],
   examples: [
     { project: "MonitorTest", problem: "Getting sold a bad screen",            fix: "A browser-based display tester" },
-    { project: "Login Snaps", problem: "People knew my laptop PIN",            fix: "A webcam photo on every login" },
+    { project: "Login Snaps", problem: "People using my laptop without asking", fix: "A webcam photo on every login" },
     { project: "Graphite",    problem: "No good calculator for contest prep",  fix: "My own scientific calculator" },
   ],
 };
@@ -67,14 +67,16 @@ const STATS = [
 
 /*
   PROJECTS
-  - status: "live" | "content" | "wip" | "ended"
+  - status: "live" | "content" | "wip" | "ended" | "private"
   - visual: which built-in mockup to draw ("monitor", "loginsnaps", "graphite", "imposter", "video", "bryteback", "shorts", "headunit")
   - subtitle: optional small line under the title
   - note: optional label shown above the buttons (e.g. where it runs)
   - aiTool: optional badge showing the AI tool used to build it
+  - image: optional real screenshot { src, width, height, alt } used instead of the drawn mockup
   - story: optional { kicker, problem, solution, result } shown as a Problem → Solution → Result layout
     (story.long is the full version shown in the "Read the story" popup)
-  - links: set live to null for a disabled "coming soon" button; set code to null to hide the Code button
+  - links: set live to null for a disabled "coming soon" button (add hideLive: true to hide it completely);
+    set code to null to hide the Code button, or "TODO" for a greyed-out placeholder
   - featured: true makes the card full-width on desktop
 */
 const PROJECTS = [
@@ -106,24 +108,23 @@ const PROJECTS = [
     subtitle: "Automated login camera",
     hook: "Who used my laptop? Now I know.",
     tags: ["PowerShell", "Windows Task Scheduler", "Automation", "Security"],
-    status: "live", statusLabel: "Running",
+    status: "private", statusLabel: "Private project · runs on my own laptop",
     visual: "loginsnaps",
     accent: "#a3e635",
-    note: "🔒 Personal security project, runs on my own laptop",
     story: {
-      problem: "I keep my laptop out in the open and people know my PIN, so anyone could use it without me knowing.",
+      problem: "I keep my laptop out in the open, so anyone could use it without me knowing.",
       solution: "A PowerShell automation, triggered by Windows Task Scheduler, that takes a webcam photo every time someone logs in.",
       result: "Every login leaves a timestamped photo, so I can see exactly who used my laptop.",
       long: [
-        "I keep my laptop out in the open at home, and a few people know my PIN. That means anyone could log in and use it without me ever knowing.",
+        "I keep my laptop out in the open at home, so people could use it without asking, and I'd never know.",
         "So I wrote <strong>Login Snaps</strong>: a PowerShell script hooked into <strong>Windows Task Scheduler</strong>. Every time someone logs in, the task fires, the script quietly grabs a photo from the webcam and saves it with a timestamp.",
-        "Now every login leaves evidence. If someone uses my laptop, I can see exactly who it was and when. It only runs on my own laptop, as a personal security tool.",
+        "Now every login leaves evidence. If someone uses my laptop, I can see exactly who it was and when. It's a private project: I built it for myself and it runs only on my own laptop.",
       ],
     },
     links: {
-      live: null,                                                  // TODO: add a screenshot or short demo video of Login Snaps
-      liveLabel: "Demo coming soon",
-      code: null,                                                  // TODO: add a repo link if you publish the script
+      live: null,                                                  // private project: no live demo
+      hideLive: true,                                              // don't show a Live button at all
+      code: null,                                                  // private project: no public code
     },
   },
   {
@@ -131,24 +132,32 @@ const PROJECTS = [
     subtitle: "Scientific Calculator",
     hook: "The calculator I needed for contest prep, so I built it.",
     tags: ["HTML", "CSS", "JavaScript", "Built with Claude Code"],
-    status: "wip", statusLabel: "Built for contest prep",
+    status: "live", statusLabel: "Live · v1.1.1",
     visual: "graphite",
+    // Real screenshots: the card shows the three themes side by side
+    image: { src: "assets/projects/graphite-card.webp", width: 1280, height: 800, alt: "Graphite Scientific calculator in its Titanium, Graphite and Midnight themes" },
     accent: "#94a3b8",
     aiTool: "Built with Claude Code",
     story: {
       problem: "I was learning logarithms for math contests and couldn't find a good scientific calculator online that worked the way I needed.",
-      solution: "Graphite: a scientific calculator web app with log, ln, powers, roots, trig and more, so I could practice and check my work.",
-      result: "A tool I actually use for contest prep, and anyone can open it in their browser.",
+      solution: "Graphite: an offline scientific calculator app for Windows with log, ln, powers, roots, trig, calculus and more, laid out like the exam calculators I practise on.",
+      result: "A tool I actually use for contest prep, released with a proper installer that anyone on Windows can download.",
       long: [
         "I was learning logarithms to prepare for math contests, and every online calculator I tried was either cluttered, full of ads, or didn't handle things like log bases the way I needed.",
-        "So I built <strong>Graphite</strong>, a scientific calculator web app with log, ln, powers, roots, trig functions and more. I built it with HTML, CSS and JavaScript, using Claude Code as my AI pair-programmer.",
-        "Now it's the tool I actually use to practice and check my work for contest prep, and anyone can open it in a browser.",
+        "So I built <strong>Graphite Scientific</strong>, an offline calculator app for Windows modelled on the fx-991ES workflow I use in exams: natural math display, log with any base, ln, powers, roots, trig, integrals and derivatives, plus history, constants, unit conversion and a built-in guide. It has three themes (Graphite, Titanium and Midnight). I built it with HTML, CSS and JavaScript, using Claude Code as my AI pair-programmer.",
+        "Now it's the tool I actually use to practise and check my work for contest prep. It's on version 1.1.1, ships as a real installer with versioned releases, and anyone on Windows 10 or 11 can download it from GitHub.",
+      ],
+      // Screenshots shown in the story popup (loaded only when the popup opens)
+      gallery: [
+        { src: "assets/projects/graphite-theme-graphite.webp", width: 1280, height: 720, alt: "Graphite theme with the settings panel open" },
+        { src: "assets/projects/graphite-theme-midnight.webp", width: 1280, height: 720, alt: "Midnight theme with gold keys" },
+        { src: "assets/projects/graphite-theme-titanium.webp", width: 601, height: 824, alt: "Titanium theme in a compact window" },
       ],
     },
     links: {
-      live: null,                                                  // TODO: add Graphite's live link (and a screenshot)
-      liveLabel: "Live link soon",
-      code: null,                                                  // TODO: add the repo link if it's on GitHub
+      live: "https://github.com/theaibot2011/scientific-calculator/releases/latest",
+      liveLabel: "Download",
+      code: "https://github.com/theaibot2011/scientific-calculator",
     },
   },
   {
@@ -251,7 +260,7 @@ const SKILLS = [
   { name: "Git / GitHub",    icon: "git",        level: 60, color: "#f472b6", note: "version control" },
 ];
 
-// Journey timeline. TODO: adjust the years/dates to match your real story.
+// Journey timeline
 const TIMELINE = [
   { when: "The beginning",   title: "Started editing videos", icon: "🎬", color: "#a855f7", text: "Opened DaVinci Resolve for the first time and got hooked on making clips look and feel cinematic." },
   { when: "Leveling up",     title: "Taught myself Python & HTML", icon: "🐍", color: "#facc15", text: "Moved from editing to code. Wrote my first scripts, built my first web pages, and picked up PowerShell to automate my PC." },
@@ -260,7 +269,7 @@ const TIMELINE = [
   { when: "First startup",   title: "Launched BryteBack", icon: "💡", color: "#38bdf8", text: "Tried turning an app into a real business. It didn't work out, but I learned to validate ideas before building and to keep shipping." },
   { when: "Solving my own problems", title: "Built Login Snaps & Graphite", icon: "🛠️", color: "#a3e635", text: "Wrote a PowerShell automation that photographs whoever logs into my laptop, and built a scientific calculator for math contest prep." },
   { when: "Discipline mode", title: "30-day editing challenge", icon: "🔥", color: "#a3e635", text: "One finished edit every day for 30 days. Learned that consistency beats motivation." },
-  { when: "Right now",       title: "O Levels prep + building", icon: "📚", color: "#38bdf8", text: "Balancing O Levels at Bravian International School with side projects like the Nissan Dayz head unit rebuild." },
+  { when: "Right now",       title: "O Levels prep + building", icon: "📚", color: "#38bdf8", text: "Balancing O Levels at Bravian International School and College with side projects like the Nissan Dayz head unit rebuild." },
   { when: "What's next",     title: "Exchange programs, internships & bigger builds", icon: "🚀", color: "#a3e635", next: true, text: "Looking for programs like YES, internships and competitions where I can learn from people building at a bigger scale." },
 ];
 
@@ -359,20 +368,16 @@ const MOCKUPS = {
 
   loginsnaps: () => `
     <div class="ls">
-      <div class="ls-lock">
-        <span class="ls-time">21:07</span>
-        <span class="ls-date">Welcome back</span>
-        <span class="ls-avatar"></span>
-        <span class="ls-pin">● ● ● ●</span>
-      </div>
-      <div class="ls-log">
-        <span class="ls-cam"><span class="ls-rec"></span> Webcam snap saved</span>
-        <div class="ls-shots">
-          <span class="ls-shot"><i></i><small>21:07</small></span>
-          <span class="ls-shot"><i></i><small>18:42</small></span>
-          <span class="ls-shot"><i></i><small>09:15</small></span>
-        </div>
-        <code class="ls-code">PS&gt; Register-ScheduledTask -Trigger AtLogOn</code>
+      <div class="ls-term">
+        <div class="ls-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="ls-tab">Windows PowerShell</span></div>
+        <pre class="ls-out"><span class="c"># login-snaps.ps1 · runs at every logon</span>
+<span class="k">Register-ScheduledTask</span> <span class="p">-TaskName</span> <span class="s">"LoginSnaps"</span> <span class="p">-Trigger</span> (<span class="k">New-ScheduledTaskTrigger</span> <span class="p">-AtLogOn</span>)
+
+<span class="v">$stamp</span> = <span class="k">Get-Date</span> <span class="p">-Format</span> <span class="s">"yyyy-MM-dd_HH-mm"</span>
+<span class="k">Save-WebcamSnap</span> <span class="p">-Path</span> <span class="s">"snaps\\$stamp.jpg"</span>
+
+<span class="ok">✔ logon detected   21:07</span>
+<span class="ok">✔ snap saved       2026-11-05_21-07.jpg</span><span class="ls-caret"></span></pre>
       </div>
     </div>`,
 
@@ -381,10 +386,11 @@ const MOCKUPS = {
     return `
     <div class="gr">
       <div class="gr-calc">
+        <div class="gr-titlebar"><span>Graphite</span><i>—</i><i>▢</i><i>✕</i></div>
         <div class="gr-display"><small>log₁₀(1000) + ln(e²)</small><b>5</b></div>
         <div class="gr-keys">${keys.map(k => `<span class="${k === "=" ? "eq" : /^[a-z√]/.test(k) ? "fn" : ""}">${k}</span>`).join("")}</div>
       </div>
-      <span class="gr-name">Graphite</span>
+      <span class="gr-name">v1.0.1 · Windows</span>
     </div>`;
   },
 
@@ -414,6 +420,10 @@ const MOCKUPS = {
 
 /* ---- Small helper: renders one button, or a disabled one when url is null ---- */
 function linkButton(url, label, icon, variant, projectTitle) {
+  if (url === "TODO") {
+    // placeholder: shows the button but it isn't clickable until a real URL is added
+    return `<span class="btn btn-sm ${variant}" aria-disabled="true" title="Link coming soon">${icon}${label}</span>`;
+  }
   if (!url && variant === "btn-ghost") return ""; // no repo → no Code button
   if (!url) {
     return `<span class="btn btn-sm ${variant}" aria-disabled="true" title="Not available yet">${label}</span>`;
@@ -433,13 +443,15 @@ function renderStory(story, cls = "") {
 function renderProjects() {
   const grid = $("#projects-grid");
   grid.innerHTML = PROJECTS.map((p, i) => {
-    const statusClass = { live: "status-live", content: "status-content", wip: "status-wip", ended: "status-ended" }[p.status] || "status-live";
-    const live = linkButton(p.links.live, p.links.liveLabel || "Live", ICONS.external, "btn-primary", p.title);
+    const statusClass = { live: "status-live", content: "status-content", wip: "status-wip", ended: "status-ended", private: "status-private" }[p.status] || "status-live";
+    const live = p.links.hideLive ? "" : linkButton(p.links.live, p.links.liveLabel || "Live", ICONS.external, "btn-primary", p.title);
     const code = linkButton(p.links.code, p.links.codeLabel || "Code", ICONS.code, "btn-ghost", p.title);
     return `
       <article class="project-card reveal tilt ${p.featured ? "featured" : ""} ${p.featured && i > 0 ? "flip" : ""}" style="--accent:${p.accent}; --d:${(i % 2) * 0.1}s">
-        <div class="project-visual" role="img" aria-label="Illustrated preview of ${p.title}">
-          ${MOCKUPS[p.visual] ? MOCKUPS[p.visual]() : ""}
+        <div class="project-visual" ${p.image ? "" : `role="img" aria-label="Illustrated preview of ${p.title}"`}>
+          ${p.image
+            ? `<img class="project-shot" src="${p.image.src}" width="${p.image.width}" height="${p.image.height}" alt="${p.image.alt}" loading="lazy" decoding="async">`
+            : MOCKUPS[p.visual] ? MOCKUPS[p.visual]() : ""}
         </div>
         <div class="project-body">
           <div class="project-meta">
@@ -808,7 +820,7 @@ function initStoryModal() {
   const open = i => {
     const p = PROJECTS[i];
     if (!p || !p.story) return;
-    const live = linkButton(p.links.live, p.links.liveLabel || "Live", ICONS.external, "btn-primary", p.title);
+    const live = p.links.hideLive ? "" : linkButton(p.links.live, p.links.liveLabel || "Live", ICONS.external, "btn-primary", p.title);
     const code = linkButton(p.links.code, p.links.codeLabel || "Code", ICONS.code, "btn-ghost", p.title);
     body.style.setProperty("--accent", p.accent);
     body.innerHTML = `
@@ -817,6 +829,8 @@ function initStoryModal() {
       <p class="project-hook">${p.hook}</p>
       ${renderStory(p.story, "psr-lg")}
       <div class="story-long">${(p.story.long || []).map(t => `<p>${t}</p>`).join("")}</div>
+      ${p.story.gallery ? `<div class="story-gallery">${p.story.gallery.map(g => `
+        <a href="${g.src}" target="_blank" rel="noopener" class="${g.height > g.width ? "tall" : ""}"><img src="${g.src}" width="${g.width}" height="${g.height}" alt="${g.alt}" loading="lazy" decoding="async"></a>`).join("")}</div>` : ""}
       ${p.note ? `<p class="project-note">${p.note}</p>` : ""}
       <div class="project-actions">${live}${code}</div>`;
     modal.showModal();

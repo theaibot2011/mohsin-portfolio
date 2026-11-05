@@ -16,7 +16,7 @@ I'm preparing for my O Levels and spend my free time building websites, tools, a
 **Built with:** HTML, CSS, JavaScript, Claude Code
 
 ### Login Snaps
-**Problem:** I keep my laptop out in the open and other people know my PIN, so anyone could use it without me knowing.
+**Problem:** I keep my laptop out in the open, so anyone could use it without me knowing.
 **Solution:** A PowerShell automation that takes a webcam photo every time someone logs in to my laptop, so I can see who used it.
 **Built with:** PowerShell, Windows automation
 *A personal security project that runs on my own laptop.*
@@ -46,15 +46,15 @@ Python, HTML/CSS/JavaScript, PowerShell, DaVinci Resolve, Supabase, Git/GitHub
 ## Run It Locally
 
 1. Clone the repo:
-   ```
+   ```bash
    git clone https://github.com/theaibot2011/mohsin-portfolio.git
    ```
-2. Open `index.html` in your browser.
+2. Open index.html in your browser.
 
 ## Contact
 
 - GitHub: [@theaibot2011](https://github.com/theaibot2011)
-- Email: TODO
+- Email: mmsoomro67@gmail.com
 
 ## License
 
