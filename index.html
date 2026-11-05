@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ============ SEO ============ -->
+  <title>Muhammad Mohsin | Student Builder, Video Editor &amp; Developer from Karachi</title>
+  <meta name="description" content="Muhammad Mohsin is a self-taught student builder from Karachi, Pakistan. He ships real web apps like MonitorTest and Imposter, and edits video in DaVinci Resolve." />
+  <meta name="author" content="Muhammad Mohsin" />
+  <meta name="keywords" content="Muhammad Mohsin, portfolio, student developer, Karachi, Pakistan, Python, HTML, PowerShell, DaVinci Resolve, video editing, Supabase, MonitorTest, Imposter" />
+  <meta name="theme-color" content="#07060d" />
+    <link rel="canonical" href="https://theaibot2011.github.io/mohsin-portfolio/" />
+
+  <!-- ============ Open Graph / social previews ============ -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Muhammad Mohsin | Builder. Editor. Gamer. Problem Solver." />
+  <meta property="og:description" content="Self-taught student from Karachi who builds real tools and ships them." />
+    <meta property="og:url" content="https://theaibot2011.github.io/mohsin-portfolio/" />
+  <meta property="og:image" content="https://theaibot2011.github.io/mohsin-portfolio/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Muhammad Mohsin | Student Builder" />
+  <meta name="twitter:description" content="Self-taught student from Karachi who builds real tools and ships them." />
+  <meta name="twitter:image" content="https://theaibot2011.github.io/mohsin-portfolio/assets/og-image.png" />
+
+  <!-- ============ Icons ============ -->
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/favicon.svg" />
+
+  <!-- ============ Fonts (Sora for headings, Inter for body, JetBrains Mono for code bits) ============ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Structured data helps Google understand who this page is about -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Muhammad Mohsin",
+    "alternateName": "Mohsin",
+    "address": { "@type": "PostalAddress", "addressLocality": "Karachi", "addressCountry": "PK" },
+    "affiliation": { "@type": "EducationalOrganization", "name": "Bravian International School" },
+    "knowsAbout": ["Python", "HTML", "CSS", "JavaScript", "PowerShell", "DaVinci Resolve", "Supabase", "Video editing"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Animated background: blurred floating orbs + subtle grid. Pure CSS. -->
+  <div class="bg" aria-hidden="true">
+    <span class="orb orb-1"></span>
+    <span class="orb orb-2"></span>
+    <span class="orb orb-3"></span>
+    <span class="orb orb-4"></span>
+    <div class="grid-overlay"></div>
+    <div class="noise"></div>
+  </div>
+
+  <!-- Soft glow that follows the mouse (desktop only) -->
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header class="nav" id="nav">
+    <div class="nav-inner container">
+      <a href="#home" class="logo" id="logo" aria-label="Muhammad Mohsin, back to top">
+        <img src="assets/favicon.svg" alt="" width="32" height="32" />
+        <span>Mohsin<span class="logo-dot">.</span></span>
+      </a>
+
+      <nav aria-label="Main">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#about" data-nav>About</a></li>
+          <li><a href="#how" data-nav>How I Build</a></li>
+          <li><a href="#projects" data-nav>Projects</a></li>
+          <li><a href="#editing" data-nav>Editing</a></li>
+          <li><a href="#skills" data-nav>Skills</a></li>
+          <li><a href="#journey" data-nav>Journey</a></li>
+          <li><a href="#contact" data-nav class="nav-cta">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow reveal">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            <span data-content="heroEyebrow">Student · Karachi, Pakistan · Open to opportunities</span>
+          </p>
+
+          <h1 id="hero-title" class="hero-title reveal">
+            <span class="hero-name" data-content="name">Muhammad Mohsin</span>
+            <span class="hero-role-line">
+              <span class="sr-only">Builder, Editor, Gamer, Problem Solver.</span>
+              <span class="hero-role" id="hero-role" aria-hidden="true">Builder.</span><span class="caret" aria-hidden="true"></span>
+            </span>
+          </h1>
+
+          <p class="hero-sub reveal" data-content="heroLine">
+            I'm a self-taught teen who turns ideas into real apps, edits, and tools, and then actually ships them.
+          </p>
+
+          <div class="hero-ctas reveal">
+            <a href="#projects" class="btn btn-primary btn-lg magnetic">
+              View My Work
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="#contact" class="btn btn-ghost btn-lg magnetic">Contact Me</a>
+          </div>
+
+          <ul class="hero-chips reveal" aria-label="Quick facts">
+            <li>🐍 Python</li>
+            <li>🎬 DaVinci Resolve</li>
+            <li>⚡ Supabase</li>
+            <li>🖥️ Web apps</li>
+          </ul>
+        </div>
+
+        <!-- Decorative "code window" card on the right -->
+        <div class="hero-visual reveal" aria-hidden="true">
+          <div class="code-window glass tilt">
+            <div class="window-bar">
+              <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+              <span class="window-title">mohsin.js</span>
+            </div>
+<pre class="code"><code><span class="k">const</span> <span class="v">mohsin</span> = {
+  <span class="p">based</span>: <span class="s">"Karachi, PK"</span>,
+  <span class="p">school</span>: <span class="s">"Bravian Intl."</span>,
+  <span class="p">mode</span>: <span class="s">"O Levels + shipping"</span>,
+  <span class="p">stack</span>: [<span class="s">"Python"</span>, <span class="s">"HTML"</span>, <span class="s">"PS1"</span>],
+  <span class="p">edits</span>: <span class="s">"DaVinci Resolve"</span>,
+  <span class="p">projects</span>: <span class="n">8</span>,
+};
+
+<span class="v">mohsin</span>.<span class="f">build</span>(<span class="s">"the future"</span>);
+<span class="c">// → loading...</span><span class="code-caret"></span></code></pre>
+            <div class="code-glow"></div>
+          </div>
+          <div class="float-badge badge-a glass">🎮 Player 1 · Builder</div>
+          <div class="float-badge badge-b glass"><span class="live-dot"></span> 2 apps live</div>
+        </div>
+      </div>
+
+      <a href="#stats" class="scroll-hint" aria-label="Scroll down">
+        <span class="mouse"><span class="wheel"></span></span>
+      </a>
+    </section>
+
+    <!-- ===================== STATS STRIP ===================== -->
+    <section class="stats" id="stats" aria-label="Quick stats">
+      <div class="container">
+        <ul class="stats-grid glass reveal" id="stats-grid">
+          <!-- Filled from STATS in js/main.js -->
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container about-grid">
+        <div class="about-avatar reveal">
+          <div class="avatar-ring">
+            <div class="avatar glass" role="img" aria-label="Stylised avatar with the letter M">
+              <span>M</span>
+            </div>
+          </div>
+          <div class="avatar-tag glass">📍 Karachi, PK</div>
+        </div>
+
+        <div class="about-copy">
+          <p class="section-kicker reveal">01 · About me</p>
+          <h2 id="about-title" class="section-title reveal">I teach myself tech, then <span class="grad">build things I actually use.</span></h2>
+          <div class="about-text reveal" id="about-text">
+            <!-- Filled from ABOUT in js/main.js -->
+          </div>
+          <ul class="about-facts reveal" id="about-facts"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== HOW I BUILD ===================== -->
+    <section class="section section-tight" id="how" aria-labelledby="how-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker reveal">02 · How I build</p>
+          <h2 id="how-title" class="section-title reveal">Real problems in, <span class="grad">real tools out.</span></h2>
+          <p class="how-line reveal" id="how-line"><!-- Filled from HOW_I_BUILD in js/main.js --></p>
+        </div>
+        <ol class="how-steps" id="how-steps"></ol>
+        <p class="how-ex-heading reveal">Three times I did exactly that:</p>
+        <ul class="how-examples" id="how-examples"></ul>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker reveal">03 · Projects</p>
+          <h2 id="projects-title" class="section-title reveal">Stuff I've <span class="grad">built &amp; shipped.</span></h2>
+          <p class="section-lead reveal">Real projects, real users, real lessons. Most of these started with a problem I ran into myself.</p>
+        </div>
+        <div class="projects-grid" id="projects-grid">
+          <!-- Filled from PROJECTS in js/main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== VIDEO EDITING ===================== -->
+    <section class="section" id="editing" aria-labelledby="editing-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker reveal">04 · The 30-day editing challenge</p>
+          <h2 id="editing-title" class="section-title reveal">30 days. 30 edits. <span class="grad">Zero excuses.</span></h2>
+          <p class="section-lead reveal">I challenged myself to edit something new in DaVinci Resolve every single day for a month. Here's what I worked on, step by step.</p>
+        </div>
+
+        <div class="challenge-bar glass reveal" aria-label="Challenge progress: 30 of 30 days complete">
+          <div class="challenge-days" id="challenge-days"></div>
+          <p class="challenge-caption"><strong>30 / 30</strong> days completed ✅</p>
+        </div>
+
+        <div class="video-grid" id="video-grid">
+          <!-- Filled from VIDEOS (challenge steps) in js/main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SKILLS ===================== -->
+    <section class="section" id="skills" aria-labelledby="skills-title">
+      <div class="container skills-grid">
+        <div>
+          <p class="section-kicker reveal">05 · Skills</p>
+          <h2 id="skills-title" class="section-title reveal">My <span class="grad">toolkit.</span></h2>
+          <p class="section-lead reveal">All self-taught, through docs, YouTube, way too many error messages, and building projects until they worked.</p>
+          <ul class="skill-list" id="skill-list">
+            <!-- Filled from SKILLS in js/main.js -->
+          </ul>
+        </div>
+
+        <!-- Orbiting icon badges (decorative, the list on the left has the real info) -->
+        <div class="orbit-wrap reveal" aria-hidden="true">
+          <div class="orbit orbit-outer" id="orbit-outer"></div>
+          <div class="orbit orbit-inner" id="orbit-inner"></div>
+          <div class="orbit-core">
+            <span>M</span>
+            <small>builder</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== JOURNEY / TIMELINE ===================== -->
+    <section class="section" id="journey" aria-labelledby="journey-title">
+      <div class="container">
+        <div class="section-head center">
+          <p class="section-kicker reveal">06 · Journey</p>
+          <h2 id="journey-title" class="section-title reveal">The <span class="grad">level-up</span> log.</h2>
+          <p class="section-lead reveal">How I went from "how do I cut a clip?" to shipping multiplayer web apps.</p>
+        </div>
+        <ol class="timeline" id="timeline">
+          <!-- Filled from TIMELINE in js/main.js -->
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact-card glass reveal">
+          <div class="contact-copy">
+            <p class="section-kicker">07 · Contact</p>
+            <h2 id="contact-title" class="section-title">Let's build <span class="grad">something.</span></h2>
+            <p class="section-lead">Reviewing me for an exchange program, internship, competition or scholarship? Or just want to talk tech, cars or games? My inbox is open.</p>
+            <ul class="socials" id="socials">
+              <!-- Filled from SOCIALS in js/main.js -->
+            </ul>
+          </div>
+
+          <!--
+            TODO: Contact form. Create a free form at https://formspree.io, then paste
+            your form ID into CONTACT.formEndpoint in js/main.js.
+            Until then, the form falls back to opening your email app (mailto:).
+          -->
+          <form class="contact-form" id="contact-form" novalidate>
+            <div class="field">
+              <input type="text" id="cf-name" name="name" placeholder=" " required autocomplete="name" />
+              <label for="cf-name">Your name</label>
+            </div>
+            <div class="field">
+              <input type="email" id="cf-email" name="email" placeholder=" " required autocomplete="email" />
+              <label for="cf-email">Your email</label>
+            </div>
+            <div class="field">
+              <textarea id="cf-message" name="message" rows="5" placeholder=" " required></textarea>
+              <label for="cf-message">Message</label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg btn-block">
+              Send message
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l16-8-6 16-2-7-8-1z"/></svg>
+            </button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Muhammad Mohsin · Karachi, Pakistan</p>
+      <p class="footer-built">Built with <span class="grad">Claude Code</span> · hand-tuned by Mohsin</p>
+      <p class="footer-egg">Psst… try <kbd>↑</kbd><kbd>↑</kbd><kbd>↓</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd><kbd>←</kbd><kbd>→</kbd><kbd>B</kbd><kbd>A</kbd></p>
+    </div>
+  </footer>
+
+  <!-- "The story" popup (filled by initStoryModal in js/main.js) -->
+  <dialog class="story-modal" id="story-modal" aria-labelledby="story-title">
+    <button type="button" class="story-close" id="story-close" aria-label="Close story">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <div class="story-body" id="story-body"></div>
+  </dialog>
+
+  <!-- Easter egg pieces -->
+  <canvas id="confetti" aria-hidden="true"></canvas>
+  <div class="toast glass" id="toast" role="status" aria-live="polite"></div>
+
+  <noscript>
+    <style>.reveal{opacity:1!important;transform:none!important}</style>
+    <p class="noscript">This site works best with JavaScript turned on, which loads the projects, skills and timeline.</p>
+  </noscript>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
